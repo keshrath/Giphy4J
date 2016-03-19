@@ -15,7 +15,7 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package at.mukprojects.giphy4j.entity;
+package at.mukprojects.giphy4j.entity.search;
 
 import java.util.List;
 
