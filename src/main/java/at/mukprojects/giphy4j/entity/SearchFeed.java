@@ -21,8 +21,8 @@ import java.util.List;
 
 import com.google.gson.annotations.SerializedName;
 
-import at.mukprojects.giphy4j.entitiy.common.Meta;
-import at.mukprojects.giphy4j.entitiy.common.Pagination;
+import at.mukprojects.giphy4j.entity.common.Meta;
+import at.mukprojects.giphy4j.entity.common.Pagination;
 import at.mukprojects.giphy4j.entity.giphy.GiphyData;
 
 /**
