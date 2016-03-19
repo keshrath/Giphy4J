@@ -15,7 +15,7 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package at.mukprojects.giphy4j.models;
+package at.mukprojects.giphy4j.entity.giphy;
 
 import com.google.gson.annotations.SerializedName;
 

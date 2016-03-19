@@ -27,7 +27,7 @@ import org.apache.commons.io.IOUtils;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import at.mukprojects.giphy4j.models.SearchFeed;
+import at.mukprojects.giphy4j.entity.SearchFeed;
 
 /**
  * This class represents the main API class.

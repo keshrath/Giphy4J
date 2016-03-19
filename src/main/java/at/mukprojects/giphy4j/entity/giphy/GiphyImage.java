@@ -15,63 +15,43 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package at.mukprojects.giphy4j.models;
+package at.mukprojects.giphy4j.entity.giphy;
 
 import com.google.gson.annotations.SerializedName;
 
 /**
- * This class is used to hold the meta information of the response.
+ * This class is used to hold the image information of the response.
  *
  * @author Mathias Markl
  */
-public class Meta {
+public class GiphyImage {
 
-    @SerializedName("status")
-    private int status;
-
-    @SerializedName("msg")
-    private String msg;
+    @SerializedName("original")
+    private GiphyOriginal original;
 
     /**
-     * Returns the status.
+     * Returns the image.
      * 
-     * @return The status as an integer value.
+     * @return The image.
      */
-    public int getStatus() {
-	return status;
+    public GiphyOriginal getOriginal() {
+	return original;
     }
 
     /**
-     * Sets the status information of the meta object.
+     * Sets the image.
      * 
-     * @param status
-     *            The status.
+     * @param original The image.
      */
-    public void setStatus(int status) {
-	this.status = status;
-    }
-
-    /**
-     * Returns the meta message.
-     * 
-     * @return The message.
-     */
-    public String getMsg() {
-	return msg;
-    }
-
-    /**
-     * Sets the message of the meta object.
-     * 
-     * @param msg
-     *            The message.
-     */
-    public void setMsg(String msg) {
-	this.msg = msg;
+    public void setOriginal(GiphyOriginal original) {
+	this.original = original;
     }
 
     @Override
     public String toString() {
-	return "Meta [status = " + status + ", msg = " + msg + "]";
+	String outputString = "GifImage [";
+	outputString += original;
+	outputString += "\n    ]";
+	return outputString;
     }
 }

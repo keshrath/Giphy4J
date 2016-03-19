@@ -33,6 +33,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import at.mukprojects.giphy4j.Giphy;
+import at.mukprojects.giphy4j.entity.SearchFeed;
 
 /**
  * SerachFeed test class.

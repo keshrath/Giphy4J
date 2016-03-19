@@ -15,11 +15,15 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package at.mukprojects.giphy4j.models;
+package at.mukprojects.giphy4j.entity;
 
 import java.util.List;
 
 import com.google.gson.annotations.SerializedName;
+
+import at.mukprojects.giphy4j.entitiy.common.Meta;
+import at.mukprojects.giphy4j.entitiy.common.Pagination;
+import at.mukprojects.giphy4j.entity.giphy.GiphyData;
 
 /**
  * This class represents a search response.
