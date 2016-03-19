@@ -24,17 +24,17 @@ import com.google.gson.annotations.SerializedName;
  *
  * @author Mathias Markl
  */
-public class GifImage {
+public class GiphyImage {
 
     @SerializedName("original")
-    private Gif original;
+    private GiphyOriginal original;
 
     /**
      * Returns the image.
      * 
      * @return The image.
      */
-    public Gif getOriginal() {
+    public GiphyOriginal getOriginal() {
 	return original;
     }
 
@@ -43,7 +43,7 @@ public class GifImage {
      * 
      * @param original The image.
      */
-    public void setOriginal(Gif original) {
+    public void setOriginal(GiphyOriginal original) {
 	this.original = original;
     }
 

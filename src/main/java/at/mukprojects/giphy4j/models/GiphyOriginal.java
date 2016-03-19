@@ -24,7 +24,7 @@ import com.google.gson.annotations.SerializedName;
  *
  * @author Mathias Markl
  */
-public class Gif {
+public class GiphyOriginal {
 
     @SerializedName("url")
     private String url;

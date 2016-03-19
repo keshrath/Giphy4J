@@ -24,7 +24,7 @@ import com.google.gson.annotations.SerializedName;
  *
  * @author Mathias Markl
  */
-public class GifData {
+public class GiphyData {
 
     @SerializedName("type")
     private String type;
@@ -72,7 +72,7 @@ public class GifData {
     private String trendingDatetime;
 
     @SerializedName("images")
-    private GifImage images;
+    private GiphyImage images;
 
     /**
      * Returns the type.
@@ -364,7 +364,7 @@ public class GifData {
      * 
      * @return The image.
      */
-    public GifImage getImages() {
+    public GiphyImage getImages() {
 	return images;
     }
 
@@ -374,7 +374,7 @@ public class GifData {
      * @param images
      *            The image.
      */
-    public void setImages(GifImage images) {
+    public void setImages(GiphyImage images) {
 	this.images = images;
     }
 

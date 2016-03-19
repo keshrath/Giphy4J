@@ -29,7 +29,7 @@ import com.google.gson.annotations.SerializedName;
 public class SearchFeed {
 
     @SerializedName("data")
-    private List<GifData> dataList;
+    private List<GiphyData> dataList;
 
     @SerializedName("meta")
     private Meta meta;
@@ -42,7 +42,7 @@ public class SearchFeed {
      * 
      * @return The data list.
      */
-    public List<GifData> getDataList() {
+    public List<GiphyData> getDataList() {
 	return dataList;
     }
 
@@ -52,7 +52,7 @@ public class SearchFeed {
      * @param dataList
      *            The data list.
      */
-    public void setDataList(List<GifData> dataList) {
+    public void setDataList(List<GiphyData> dataList) {
 	this.dataList = dataList;
     }
 
@@ -97,7 +97,7 @@ public class SearchFeed {
     @Override
     public String toString() {
 	String outputString = "SearchFeed [";
-	for (GifData data : dataList) {
+	for (GiphyData data : dataList) {
 	    outputString += "\n  " + data;
 	}
 	outputString += "\n  " + meta + "\n  " + pagination + "\n]";
