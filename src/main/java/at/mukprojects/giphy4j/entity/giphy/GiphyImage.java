@@ -20,38 +20,190 @@ package at.mukprojects.giphy4j.entity.giphy;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * This class is used to hold the image information of the response.
+ * This class represents the image file.
  *
  * @author Mathias Markl
  */
 public class GiphyImage {
 
-    @SerializedName("original")
-    private GiphyOriginal original;
+    @SerializedName("url")
+    private String url;
+
+    @SerializedName("width")
+    private String width;
+
+    @SerializedName("height")
+    private String height;
+
+    @SerializedName("size")
+    private String size;
+
+    @SerializedName("mp4")
+    private String mp4;
+
+    @SerializedName("mp4_size")
+    private String mp4Size;
+
+    @SerializedName("webp")
+    private String webp;
+
+    @SerializedName("webp_size")
+    private String webpSize;
 
     /**
-     * Returns the image.
+     * Returns the URL.
      * 
-     * @return The image.
+     * @return The URL.
      */
-    public GiphyOriginal getOriginal() {
-	return original;
+    public String getUrl() {
+	return url;
     }
 
     /**
-     * Sets the image.
+     * Sets the URL.
      * 
-     * @param original The image.
+     * @param url
+     *            The URL.
      */
-    public void setOriginal(GiphyOriginal original) {
-	this.original = original;
+    public void setUrl(String url) {
+	this.url = url;
+    }
+
+    /**
+     * Returns the width.
+     * 
+     * @return The width of the image.
+     */
+    public String getWidth() {
+	return width;
+    }
+
+    /**
+     * Sets the width.
+     * 
+     * @param width
+     *            The width.
+     */
+    public void setWidth(String width) {
+	this.width = width;
+    }
+
+    /**
+     * Returns the height.
+     * 
+     * @return The height of the image.
+     */
+    public String getHeight() {
+	return height;
+    }
+
+    /**
+     * Sets the height.
+     * 
+     * @param width
+     *            The height.
+     */
+    public void setHeight(String height) {
+	this.height = height;
+    }
+
+    /**
+     * Returns the size.
+     * 
+     * @return The size.
+     */
+    public String getSize() {
+	return size;
+    }
+
+    /**
+     * Sets the size.
+     * 
+     * @param size
+     *            The size.
+     */
+    public void setSize(String size) {
+	this.size = size;
+    }
+
+    /**
+     * Returns the mp4 URL.
+     * 
+     * @return The mp4 URL.
+     */
+    public String getMp4() {
+	return mp4;
+    }
+
+    /**
+     * Sets the mp4 URL.
+     * 
+     * @param mp4
+     *            The mp4 URL.
+     */
+    public void setMp4(String mp4) {
+	this.mp4 = mp4;
+    }
+
+    /**
+     * Returns the mp4 size.
+     * 
+     * @return The mp4 size.
+     */
+    public String getMp4Size() {
+	return mp4Size;
+    }
+
+    /**
+     * Sets the mp4 size.
+     * 
+     * @param mp4
+     *            The mp4 size.
+     */
+    public void setMp4Size(String mp4Size) {
+	this.mp4Size = mp4Size;
+    }
+
+    public String getWebp() {
+	return webp;
+    }
+
+    /**
+     * Sets the webp URL.
+     * 
+     * @param webp
+     *            The webp URL.
+     */
+    public void setWebp(String webp) {
+	this.webp = webp;
+    }
+
+    public String getWebpSize() {
+	return webpSize;
+    }
+
+    /**
+     * Sets the webp size.
+     * 
+     * @param webp
+     *            The webp size.
+     */
+    public void setWebpSize(String webpSize) {
+	this.webpSize = webpSize;
     }
 
     @Override
     public String toString() {
-	String outputString = "GifImage [";
-	outputString += original;
-	outputString += "\n    ]";
+	String outputString = "";
+	outputString += "\n      url = " + url;
+	outputString += "\n      width = " + width;
+	outputString += "\n      height = " + height;
+	outputString += "\n      size = " + size;
+	outputString += "\n      mp4 = " + mp4;
+	outputString += "\n      mp4Size = " + mp4Size;
+	outputString += "\n      webp = " + webp;
+	outputString += "\n      webpSize = " + webpSize;
 	return outputString;
     }
+
 }

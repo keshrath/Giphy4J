@@ -72,7 +72,7 @@ public class GiphyData {
     private String trendingDatetime;
 
     @SerializedName("images")
-    private GiphyImage images;
+    private GiphyContainer images;
 
     /**
      * Returns the type.
@@ -364,7 +364,7 @@ public class GiphyData {
      * 
      * @return The image.
      */
-    public GiphyImage getImages() {
+    public GiphyContainer getImages() {
 	return images;
     }
 
@@ -374,7 +374,7 @@ public class GiphyData {
      * @param images
      *            The image.
      */
-    public void setImages(GiphyImage images) {
+    public void setImages(GiphyContainer images) {
 	this.images = images;
     }
 

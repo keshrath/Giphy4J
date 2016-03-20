@@ -17,12 +17,11 @@
 
 package at.mukprojects.giphy4j.models;
 
-import static org.mockito.Mockito.*;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.StringWriter;
 
 import org.apache.commons.io.IOUtils;
@@ -35,6 +34,7 @@ import com.google.gson.GsonBuilder;
 
 import at.mukprojects.giphy4j.Giphy;
 import at.mukprojects.giphy4j.entity.search.SearchFeed;
+import at.mukprojects.giphy4j.entity.search.SerachGiphy;
 import at.mukprojects.giphy4j.exception.GiphyException;
 
 /**
@@ -42,10 +42,10 @@ import at.mukprojects.giphy4j.exception.GiphyException;
  *
  * @author Mathias Markl
  */
-public class SerachFeedTest {
+public class SerachGiphyTest {
 
     private final static String API_KEY = "dc6zaTOxFJmzC";
-    private final static String RESFILE = "src/test/resources/search-response.json";
+    private final static String RESFILE = "src/test/resources/search-id-response.json";
 
     private StringWriter writer;
     private FileInputStream inputStream;
@@ -54,7 +54,6 @@ public class SerachFeedTest {
     private String jsonResponse;
 
     private Giphy giphy;
-    private Giphy giphyMock;
 
     @Before
     public void setUp() throws Exception {
@@ -68,8 +67,6 @@ public class SerachFeedTest {
 
 	gson = new GsonBuilder().create();
 	giphy = new Giphy(API_KEY);
-	giphyMock = mock(Giphy.class);
-	doThrow(new GiphyException()).when(giphyMock).search("cat funny", 25, 0);
     }
 
     @After
@@ -79,29 +76,23 @@ public class SerachFeedTest {
     }
 
     /**
-     * Tests the construction of the SearchFeed model by parsing a sample API
-     * response. The sample Json String is taken from the search-response file.
+     * Tests the construction of the SerachGiphy model by parsing a sample API
+     * response. The sample Json String is taken from the search-id-response
+     * file.
      */
     @Test
     public void testSearchFeedModel() {
-	SearchFeed searchFeed = gson.fromJson(jsonResponse, SearchFeed.class);
+	SerachGiphy serachGiphy = gson.fromJson(jsonResponse, SerachGiphy.class);
 
-	assertTrue(searchFeed.getMeta().getStatus() == 200);
-	assertTrue(searchFeed.getPagination().getCount() == 2);
-	assertTrue(searchFeed.getDataList().size() >= 1);
-	assertEquals(searchFeed.getDataList().get(0).getId(), "QgcQLZa6glP2w");
-	assertEquals(searchFeed.getDataList().get(0).getImages().getOriginal().getUrl(),
-		"http://media2.giphy.com/media/QgcQLZa6glP2w/giphy.gif");
+	assertTrue(serachGiphy.getMeta().getStatus() == 200);
+	assertEquals(serachGiphy.getData().getId(), "feqkVgjJpYtjy");
+	assertEquals(serachGiphy.getData().getImages().getOriginal().getUrl(),
+		"http://media0.giphy.com/media/feqkVgjJpYtjy/giphy.gif");
 
     }
 
     @Test
     public void testSearchFeedRequest() throws GiphyException {
-	assertTrue(giphy.search("cat", 1, 0) != null);
-    }
-    
-    @Test
-    public void testSearchFeedException() throws GiphyException {
-	System.out.println(giphyMock.search("", 0, 0));
+	assertTrue(giphy.searchByID("feqkVgjJpYtjy") != null);
     }
 }

@@ -18,16 +18,20 @@
 package at.mukprojects.giphy4j;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.net.URLConnection;
+import java.util.HashMap;
 
-import org.apache.commons.io.IOUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonSyntaxException;
 
 import at.mukprojects.giphy4j.entity.search.SearchFeed;
+import at.mukprojects.giphy4j.entity.search.SerachGiphy;
+import at.mukprojects.giphy4j.exception.GiphyException;
+import at.mukprojects.giphy4j.http.HttpUtil;
+import at.mukprojects.giphy4j.http.UrlUtil;
 
 /**
  * This class represents the main API class.
@@ -36,56 +40,74 @@ import at.mukprojects.giphy4j.entity.search.SearchFeed;
  */
 public class Giphy {
 
-    private static final String searchQuery = "http://api.giphy.com/v1/gifs/search?";
+    private static final Logger log = LoggerFactory.getLogger(Giphy.class);
+    
+    private static final String SearchEndpoint = "http://api.giphy.com/v1/gifs/search";
+    private static final String IDEndpoint = "http://api.giphy.com/v1/gifs/";
 
     private String apiKey;
     private Gson gson;
 
     public Giphy(String apiKey) {
 	this.apiKey = apiKey;
-	gson = new GsonBuilder().create();
+
+	gson = new GsonBuilder().setPrettyPrinting().create();
     }
 
-    public SearchFeed search(String query, int offset) throws IOException {
+    public SearchFeed search(String query, int offset) throws GiphyException {
 	return search(query, 25, offset);
     }
 
-    public SearchFeed search(String query, int limit, int offset) throws IOException {
+    public SearchFeed search(String query, int limit, int offset) throws GiphyException {
 	SearchFeed feed = null;
 
+	HashMap<String, String> params = new HashMap<String, String>();
+
+	params.put("api_key", apiKey);
+	params.put("q", query);
 	if (limit > 100) {
-	    limit = 100;
+	    params.put("limit", "100");
+	} else {
+	    params.put("limit", limit + "");
 	}
+	params.put("offset", offset + "");
 
-	String formattedQuery = query.replace(" ", "+");
-	String queryString = searchQuery;
-
-	queryString += "q=" + formattedQuery;
-	queryString += "&";
-	queryString += "limit=" + limit;
-	queryString += "&";
-	queryString += "offset=" + offset;
-	queryString += "&";
-	queryString += "api_key=" + apiKey;
-
-	URL url = new URL(queryString);
-	URLConnection con = url.openConnection();
-	InputStream in = con.getInputStream();
-
-	String encoding = con.getContentEncoding();
-	encoding = encoding == null ? "UTF-8" : encoding;
-
-	String body = IOUtils.toString(in, encoding);
+	String url = UrlUtil.buildUrlQuery(SearchEndpoint, params);
 
 	try {
-	    feed = gson.fromJson(body, SearchFeed.class);
-	} catch (Exception e) {
-	    e.printStackTrace(); // TODO
-	} finally {
-	    in.close();
+	    feed = gson.fromJson(HttpUtil.sendRequest(url), SearchFeed.class);
+	} catch (JsonSyntaxException | IOException e) {
+	    log.debug(url);
+	    log.debug(gson.toJson(feed));
+	    log.error(e.getMessage(), e);
+	    throw new GiphyException(e);
 	}
-
+	
 	return feed;
     }
 
+    public SerachGiphy searchByID(String id) throws GiphyException {
+	SerachGiphy giphy = null;
+
+	HashMap<String, String> params = new HashMap<String, String>();
+
+	params.put("api_key", apiKey);
+
+	String url = UrlUtil.buildUrlQuery(IDEndpoint + id, params);
+
+	try {
+	    giphy = gson.fromJson(HttpUtil.sendRequest(url), SearchFeed.class);
+	} catch (JsonSyntaxException | IOException e) {
+	    log.debug(url);
+	    try {
+		log.debug(HttpUtil.sendRequest(url));
+	    } catch (IOException e1) {
+	    }
+	    log.error(e.getMessage(), e);
+	    throw new GiphyException(e);
+	}
+	
+	return giphy;
+    }
+    
 }

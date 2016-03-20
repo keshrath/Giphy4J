@@ -28,7 +28,7 @@ public class UrlUtil {
 		query += PARAM_SEPARATOR;
 	    }
 
-	    return query.substring(0, query.length() - 2);
+	    return query.substring(0, query.length() - 1);
 	}
     }
 
