@@ -178,21 +178,10 @@ public class GiphyContainer {
 	this.downsizedLarge = downsizedLarge;
     }
 
-    /**
-     * Returns the image.
-     * 
-     * @return The image.
-     */
     public GiphyOriginal getOriginal() {
 	return original;
     }
 
-    /**
-     * Sets the image.
-     * 
-     * @param original
-     *            The image.
-     */
     public void setOriginal(GiphyOriginal original) {
 	this.original = original;
     }

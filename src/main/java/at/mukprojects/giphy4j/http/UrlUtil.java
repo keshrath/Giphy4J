@@ -1,9 +1,31 @@
+/** 
+ * This code is copyright (c) Mathias Markl 2016
+ * 
+ * This program is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License as published by the Free Software
+ * Foundation, either version 3 of the License, or (at your option) any later
+ * version.
+ * 
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ * details.
+ * 
+ * You should have received a copy of the GNU General Public License along with
+ * this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package at.mukprojects.giphy4j.http;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Map;
 
+/**
+ * This class has methods to build an URL String.
+ * 
+ * @author Mathias Markl
+ */
 public class UrlUtil {
 
     private static final String PAIR_SEPARATOR = "=";
@@ -14,6 +36,15 @@ public class UrlUtil {
 
     public static final String ENCODING = "UTF-8";
 
+    /**
+     * Builds the URL String.
+     * 
+     * @param baseUrl
+     *            The base URL.
+     * @param params
+     *            The URL parameter.
+     * @return Returns the URL as String.
+     */
     public static String buildUrlQuery(String baseUrl, Map<String, String> params) {
 	if (baseUrl.isEmpty() || params.isEmpty()) {
 	    return baseUrl;

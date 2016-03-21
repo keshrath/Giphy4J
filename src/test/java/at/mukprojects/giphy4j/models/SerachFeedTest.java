@@ -17,12 +17,11 @@
 
 package at.mukprojects.giphy4j.models;
 
-import static org.mockito.Mockito.*;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.StringWriter;
 
 import org.apache.commons.io.IOUtils;
@@ -54,7 +53,6 @@ public class SerachFeedTest {
     private String jsonResponse;
 
     private Giphy giphy;
-    private Giphy giphyMock;
 
     @Before
     public void setUp() throws Exception {
@@ -68,8 +66,6 @@ public class SerachFeedTest {
 
 	gson = new GsonBuilder().create();
 	giphy = new Giphy(API_KEY);
-	giphyMock = mock(Giphy.class);
-	doThrow(new GiphyException()).when(giphyMock).search("cat funny", 25, 0);
     }
 
     @After
@@ -78,10 +74,6 @@ public class SerachFeedTest {
 	inputStream.close();
     }
 
-    /**
-     * Tests the construction of the SearchFeed model by parsing a sample API
-     * response. The sample Json String is taken from the search-response file.
-     */
     @Test
     public void testSearchFeedModel() {
 	SearchFeed searchFeed = gson.fromJson(jsonResponse, SearchFeed.class);
@@ -101,7 +93,18 @@ public class SerachFeedTest {
     }
     
     @Test
-    public void testSearchFeedException() throws GiphyException {
-	System.out.println(giphyMock.search("", 0, 0));
+    public void testSearchFeedRequest2() throws GiphyException {
+	assertTrue(giphy.trend() != null);
     }
+    
+    @Test
+    public void testSearchFeedRequest3() throws GiphyException {
+	assertTrue(giphy.searchSticker("cat", 1, 0) != null);
+    }
+    
+    @Test
+    public void testSearchFeedRequest4() throws GiphyException {
+	assertTrue(giphy.trendSticker() != null);
+    }
+
 }

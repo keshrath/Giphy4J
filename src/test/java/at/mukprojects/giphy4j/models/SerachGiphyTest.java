@@ -75,11 +75,6 @@ public class SerachGiphyTest {
 	inputStream.close();
     }
 
-    /**
-     * Tests the construction of the SerachGiphy model by parsing a sample API
-     * response. The sample Json String is taken from the search-id-response
-     * file.
-     */
     @Test
     public void testSearchFeedModel() {
 	SerachGiphy serachGiphy = gson.fromJson(jsonResponse, SerachGiphy.class);
@@ -94,5 +89,15 @@ public class SerachGiphyTest {
     @Test
     public void testSearchFeedRequest() throws GiphyException {
 	assertTrue(giphy.searchByID("feqkVgjJpYtjy") != null);
+    }
+    
+    @Test
+    public void testSearchFeedRequest2() throws GiphyException {
+	assertTrue(giphy.translate("superman") != null);
+    }
+    
+    @Test
+    public void testSearchFeedRequest3() throws GiphyException {
+	assertTrue(giphy.translateSticker("superman") != null);
     }
 }

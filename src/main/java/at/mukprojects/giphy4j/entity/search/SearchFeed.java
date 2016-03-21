@@ -26,7 +26,7 @@ import at.mukprojects.giphy4j.entity.common.Pagination;
 import at.mukprojects.giphy4j.entity.giphy.GiphyData;
 
 /**
- * This class represents a search response.
+ * This class represents a search feed response.
  *
  * @author Mathias Markl
  */
@@ -43,6 +43,10 @@ public class SearchFeed {
 
     /**
      * Returns the data list.
+     * 
+     * <p>
+     * "data": [ ... ],
+     * </p>
      * 
      * @return The data list.
      */
@@ -63,6 +67,10 @@ public class SearchFeed {
     /**
      * Returns the meta information object.
      * 
+     * <p>
+     * "meta": { ... },
+     * </p>
+     * 
      * @return The meta information object.
      */
     public Meta getMeta() {
@@ -81,6 +89,10 @@ public class SearchFeed {
 
     /**
      * Returns the pagination object.
+     * 
+     * <p>
+     * "pagination": { ... }
+     * </p>
      * 
      * @return The pagination object.
      */

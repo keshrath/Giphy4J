@@ -34,30 +34,68 @@ import at.mukprojects.giphy4j.http.HttpUtil;
 import at.mukprojects.giphy4j.http.UrlUtil;
 
 /**
- * This class represents the main API class.
+ * This class represents the main API.
  *
  * @author Mathias Markl
  */
 public class Giphy {
 
     private static final Logger log = LoggerFactory.getLogger(Giphy.class);
-    
+
     private static final String SearchEndpoint = "http://api.giphy.com/v1/gifs/search";
     private static final String IDEndpoint = "http://api.giphy.com/v1/gifs/";
+    private static final String TranslateEndpoint = "http://api.giphy.com/v1/gifs/translate";
+    private static final String TrendingEndpoint = "http://api.giphy.com/v1/gifs/trending";
+
+    private static final String SearchStickerEndpoint = "http://api.giphy.com/v1/stickers/search";
+    private static final String TranslateStickerEndpoint = "http://api.giphy.com/v1/stickers/translate";
+    private static final String TrendingStickerEndpoint = "http://api.giphy.com/v1/stickers/trending";
 
     private String apiKey;
     private Gson gson;
 
+    /**
+     * Constructs a new Giphy object.
+     * 
+     * @param apiKey
+     *            The API key.
+     */
     public Giphy(String apiKey) {
 	this.apiKey = apiKey;
 
 	gson = new GsonBuilder().setPrettyPrinting().create();
     }
 
+    /**
+     * Returns a SearchFeed object.
+     * 
+     * @param query
+     *            The query parameters. Multiple parameters are separated by a
+     *            space.
+     * @param offset
+     *            The offset.
+     * @return Returns a SearchFeed object.
+     * @throws GiphyException
+     *             If an error occurs a exception is thrown.
+     */
     public SearchFeed search(String query, int offset) throws GiphyException {
 	return search(query, 25, offset);
     }
 
+    /**
+     * Returns a SearchFeed object.
+     * 
+     * @param query
+     *            The query parameters. Multiple parameters are separated by a
+     *            space.
+     * @param limit
+     *            The result limit. The maximum is 100.
+     * @param offset
+     *            The offset.
+     * @return Returns a SearchFeed object.
+     * @throws GiphyException
+     *             If an error occurs a exception is thrown.
+     */
     public SearchFeed search(String query, int limit, int offset) throws GiphyException {
 	SearchFeed feed = null;
 
@@ -77,15 +115,27 @@ public class Giphy {
 	try {
 	    feed = gson.fromJson(HttpUtil.sendRequest(url), SearchFeed.class);
 	} catch (JsonSyntaxException | IOException e) {
-	    log.debug(url);
-	    log.debug(gson.toJson(feed));
+	    try {
+		log.debug(url);
+		log.debug(HttpUtil.sendRequest(url));
+	    } catch (IOException e1) {
+	    }
 	    log.error(e.getMessage(), e);
 	    throw new GiphyException(e);
 	}
-	
+
 	return feed;
     }
 
+    /**
+     * Returns a SerachGiphy object.
+     * 
+     * @param id
+     *            The Giphy id.
+     * @return Returns a SerachGiphy object.
+     * @throws GiphyException
+     *             If an error occurs a exception is thrown.
+     */
     public SerachGiphy searchByID(String id) throws GiphyException {
 	SerachGiphy giphy = null;
 
@@ -96,18 +146,209 @@ public class Giphy {
 	String url = UrlUtil.buildUrlQuery(IDEndpoint + id, params);
 
 	try {
-	    giphy = gson.fromJson(HttpUtil.sendRequest(url), SearchFeed.class);
+	    giphy = gson.fromJson(HttpUtil.sendRequest(url), SerachGiphy.class);
 	} catch (JsonSyntaxException | IOException e) {
-	    log.debug(url);
 	    try {
+		log.debug(url);
 		log.debug(HttpUtil.sendRequest(url));
 	    } catch (IOException e1) {
 	    }
 	    log.error(e.getMessage(), e);
 	    throw new GiphyException(e);
 	}
-	
+
 	return giphy;
     }
-    
+
+    /**
+     * Returns a SerachGiphy object.
+     * 
+     * @param query
+     *            The query parameters.
+     * @return Returns a SerachGiphy object.
+     * @throws GiphyException
+     *             If an error occurs a exception is thrown.
+     */
+    public SerachGiphy translate(String query) throws GiphyException {
+	SerachGiphy giphy = null;
+
+	HashMap<String, String> params = new HashMap<String, String>();
+
+	params.put("api_key", apiKey);
+	params.put("s", query);
+
+	String url = UrlUtil.buildUrlQuery(TranslateEndpoint, params);
+
+	try {
+	    giphy = gson.fromJson(HttpUtil.sendRequest(url), SerachGiphy.class);
+	} catch (JsonSyntaxException | IOException e) {
+	    try {
+		log.debug(url);
+		log.debug(HttpUtil.sendRequest(url));
+	    } catch (IOException e1) {
+	    }
+	    log.error(e.getMessage(), e);
+	    throw new GiphyException(e);
+	}
+
+	return giphy;
+    }
+
+    /**
+     * Returns a SearchFeed object.
+     * 
+     * @return Returns a SearchFeed object.
+     * @throws GiphyException
+     *             If an error occurs a exception is thrown.
+     */
+    public SearchFeed trend() throws GiphyException {
+	SearchFeed feed = null;
+
+	HashMap<String, String> params = new HashMap<String, String>();
+
+	params.put("api_key", apiKey);
+
+	String url = UrlUtil.buildUrlQuery(TrendingEndpoint, params);
+
+	try {
+	    feed = gson.fromJson(HttpUtil.sendRequest(url), SearchFeed.class);
+	} catch (JsonSyntaxException | IOException e) {
+	    try {
+		log.debug(url);
+		log.debug(HttpUtil.sendRequest(url));
+	    } catch (IOException e1) {
+	    }
+	    log.error(e.getMessage(), e);
+	    throw new GiphyException(e);
+	}
+
+	return feed;
+    }
+
+    /**
+     * Returns a SearchFeed object.
+     * 
+     * @param query
+     *            The query parameters. Multiple parameters are separated by a
+     *            space.
+     * @param offset
+     *            The offset.
+     * @return Returns a SearchFeed object.
+     * @throws GiphyException
+     *             If an error occurs a exception is thrown.
+     */
+    public SearchFeed searchSticker(String query, int offset) throws GiphyException {
+	return searchSticker(query, 25, offset);
+    }
+
+    /**
+     * Returns a SearchFeed object.
+     * 
+     * @param query
+     *            The query parameters. Multiple parameters are separated by a
+     *            space.
+     * @param limit
+     *            The result limit. The maximum is 100.
+     * @param offset
+     *            The offset.
+     * @return Returns a SearchFeed object.
+     * @throws GiphyException
+     *             If an error occurs a exception is thrown.
+     */
+    public SearchFeed searchSticker(String query, int limit, int offset) throws GiphyException {
+	SearchFeed feed = null;
+
+	HashMap<String, String> params = new HashMap<String, String>();
+
+	params.put("api_key", apiKey);
+	params.put("q", query);
+	if (limit > 100) {
+	    params.put("limit", "100");
+	} else {
+	    params.put("limit", limit + "");
+	}
+	params.put("offset", offset + "");
+
+	String url = UrlUtil.buildUrlQuery(SearchStickerEndpoint, params);
+
+	try {
+	    feed = gson.fromJson(HttpUtil.sendRequest(url), SearchFeed.class);
+	} catch (JsonSyntaxException | IOException e) {
+	    try {
+		log.debug(url);
+		log.debug(HttpUtil.sendRequest(url));
+	    } catch (IOException e1) {
+	    }
+	    log.error(e.getMessage(), e);
+	    throw new GiphyException(e);
+	}
+
+	return feed;
+    }
+
+    /**
+     * Returns a SerachGiphy object.
+     * 
+     * @param query
+     *            The query parameters.
+     * @return Returns a SerachGiphy object.
+     * @throws GiphyException
+     *             If an error occurs a exception is thrown.
+     */
+    public SerachGiphy translateSticker(String query) throws GiphyException {
+	SerachGiphy giphy = null;
+
+	HashMap<String, String> params = new HashMap<String, String>();
+
+	params.put("api_key", apiKey);
+	params.put("s", query);
+
+	String url = UrlUtil.buildUrlQuery(TranslateStickerEndpoint, params);
+
+	try {
+	    giphy = gson.fromJson(HttpUtil.sendRequest(url), SerachGiphy.class);
+	} catch (JsonSyntaxException | IOException e) {
+	    try {
+		log.debug(url);
+		log.debug(HttpUtil.sendRequest(url));
+	    } catch (IOException e1) {
+	    }
+	    log.error(e.getMessage(), e);
+	    throw new GiphyException(e);
+	}
+
+	return giphy;
+    }
+
+    /**
+     * Returns a SearchFeed object.
+     * 
+     * @return Returns a SearchFeed object.
+     * @throws GiphyException
+     *             If an error occurs a exception is thrown.
+     */
+    public SearchFeed trendSticker() throws GiphyException {
+	SearchFeed feed = null;
+
+	HashMap<String, String> params = new HashMap<String, String>();
+
+	params.put("api_key", apiKey);
+
+	String url = UrlUtil.buildUrlQuery(TrendingStickerEndpoint, params);
+
+	try {
+	    feed = gson.fromJson(HttpUtil.sendRequest(url), SearchFeed.class);
+	} catch (JsonSyntaxException | IOException e) {
+	    try {
+		log.debug(url);
+		log.debug(HttpUtil.sendRequest(url));
+	    } catch (IOException e1) {
+	    }
+	    log.error(e.getMessage(), e);
+	    throw new GiphyException(e);
+	}
+
+	return feed;
+    }
+
 }
