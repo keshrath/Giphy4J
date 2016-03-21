@@ -100,7 +100,7 @@ public class GiphyImage {
     /**
      * Sets the height.
      * 
-     * @param width
+     * @param height
      *            The height.
      */
     public void setHeight(String height) {
@@ -157,7 +157,7 @@ public class GiphyImage {
     /**
      * Sets the mp4 size.
      * 
-     * @param mp4
+     * @param mp4Size
      *            The mp4 size.
      */
     public void setMp4Size(String mp4Size) {
@@ -185,7 +185,7 @@ public class GiphyImage {
     /**
      * Sets the webp size.
      * 
-     * @param webp
+     * @param webpSize
      *            The webp size.
      */
     public void setWebpSize(String webpSize) {

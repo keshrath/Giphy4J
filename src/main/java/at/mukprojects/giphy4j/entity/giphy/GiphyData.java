@@ -181,7 +181,7 @@ public class GiphyData {
     /**
      * Sets the bitly URL.
      * 
-     * @param bitlyGifUrl
+     * @param bitlyUrl
      *            The bitly URL.
      */
     public void setBitlyUrl(String bitlyUrl) {
@@ -200,7 +200,7 @@ public class GiphyData {
     /**
      * Sets the embed URL.
      * 
-     * @param bitlyGifUrl
+     * @param embedUrl
      *            The embed URL.
      */
     public void setEmbedUrl(String embedUrl) {
