@@ -33,7 +33,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import at.mukprojects.giphy4j.Giphy;
-import at.mukprojects.giphy4j.entity.search.SearchFeed;
 import at.mukprojects.giphy4j.entity.search.SerachGiphy;
 import at.mukprojects.giphy4j.exception.GiphyException;
 
