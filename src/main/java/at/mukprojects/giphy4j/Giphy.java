@@ -54,6 +54,7 @@ public class Giphy {
 
     private static final String SearchStickerEndpoint = "http://api.giphy.com/v1/stickers/search";
     private static final String TranslateStickerEndpoint = "http://api.giphy.com/v1/stickers/translate";
+    private static final String RandomEndpointSticker = "http://api.giphy.com/v1/stickers/random";
     private static final String TrendingStickerEndpoint = "http://api.giphy.com/v1/stickers/trending";
 
     private String apiKey;
@@ -429,6 +430,40 @@ public class Giphy {
 	}
 
 	return feed;
+    }
+    
+    /**
+     * Returns a random GIF, limited by tag.
+     * 
+     * <p>
+     * Be aware that not every response has all information available. In that
+     * case the value will be returned as null.
+     * 
+     * @param tag
+     *            the GIF tag to limit randomness
+     * @return the SerachGiphy object
+     * @throws GiphyException
+     *             if an error occurs during the search
+     */
+    public SearchRandom searchRandomSticker(String tag) throws GiphyException {
+	SearchRandom random = null;
+
+	HashMap<String, String> params = new HashMap<String, String>();
+
+	params.put("api_key", apiKey);
+	params.put("tag", tag);
+
+	Request request = new Request(UrlUtil.buildUrlQuery(RandomEndpointSticker, params));
+
+	try {
+	    Response response = sender.sendRequest(request);
+	    random = gson.fromJson(response.getBody(), SearchRandom.class);
+	} catch (JsonSyntaxException | IOException e) {
+	    log.error(e.getMessage(), e);
+	    throw new GiphyException(e);
+	}
+
+	return random;
     }
 
 }

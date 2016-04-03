@@ -101,6 +101,12 @@ public class SerachRandomTest {
 	assertTrue(giphy.searchRandom("cat") != null);
 	assertTrue(giphy.searchRandom("cat").getData() != null);
     }
+    
+    @Test
+    public void testSearchFeedRequestSearchRandomStickerSuccess() throws GiphyException {
+	assertTrue(giphy.searchRandomSticker("cat") != null);
+	assertTrue(giphy.searchRandomSticker("cat").getData() != null);
+    }
 
 
     @Test(expected = GiphyException.class)
@@ -110,7 +116,7 @@ public class SerachRandomTest {
     
     @Test(expected = GiphyException.class)
     public void testSearchFeedRequestFailExceptionParse() throws GiphyException {
-	giphyMockExceptionParse.searchRandom("");
+	giphyMockExceptionParse.searchRandomSticker("");
     }
 
 }
