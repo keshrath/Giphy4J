@@ -15,14 +15,16 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package at.mukprojects.giphy4j.http;
+package at.mukprojects.giphy4j.util;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Map;
 
+import at.mukprojects.giphy4j.Giphy4JConstants;
+
 /**
- * This class has methods to build an URL String.
+ * This class provides methods to build an URL String.
  * 
  * @author Mathias Markl
  */
@@ -34,16 +36,14 @@ public class UrlUtil {
 
     private static final char QUERY_STRING_SEPARATOR = '?';
 
-    public static final String ENCODING = "UTF-8";
-
     /**
      * Builds the URL String.
      * 
      * @param baseUrl
-     *            The base URL.
+     *            the base URL.
      * @param params
-     *            The URL parameter.
-     * @return Returns the URL as String.
+     *            the URL parameter.
+     * @return the URL as String.
      */
     public static String buildUrlQuery(String baseUrl, Map<String, String> params) {
 	if (baseUrl.isEmpty() || params.isEmpty()) {
@@ -65,7 +65,7 @@ public class UrlUtil {
 
     private static String encodeString(String text) {
 	try {
-	    return URLEncoder.encode(text, ENCODING);
+	    return URLEncoder.encode(text, Giphy4JConstants.ENCODING);
 	} catch (UnsupportedEncodingException e) {
 	}
 	return text;

@@ -55,6 +55,9 @@ public class GiphyData {
 
     @SerializedName("rating")
     private String rating;
+    
+    @SerializedName("caption")
+    private String caption;
 
     @SerializedName("content_url")
     private String contentUrl;

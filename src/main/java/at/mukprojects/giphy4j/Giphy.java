@@ -27,11 +27,11 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
 
+import at.mukprojects.giphy4j.dao.HttpUtil;
 import at.mukprojects.giphy4j.entity.search.SearchFeed;
 import at.mukprojects.giphy4j.entity.search.SerachGiphy;
 import at.mukprojects.giphy4j.exception.GiphyException;
-import at.mukprojects.giphy4j.http.HttpUtil;
-import at.mukprojects.giphy4j.http.UrlUtil;
+import at.mukprojects.giphy4j.util.UrlUtil;
 
 /**
  * This class represents the main API.
@@ -64,6 +64,19 @@ public class Giphy {
 	this.apiKey = apiKey;
 
 	gson = new GsonBuilder().setPrettyPrinting().create();
+    }
+    
+    /**
+     * Constructs a new HttpRequestSender object.
+     * 
+     * <p>
+     * It's recommended to use the simple constructor without any arguments.
+     * This one is just for testing purposes or in case you want to use the
+     * sender with different settings.
+     * 
+     */
+    public HttpRequestSender(String test) {
+
     }
 
     /**
