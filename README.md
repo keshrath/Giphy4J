@@ -131,9 +131,9 @@ Quick showcase how to use the library.
 	feed.getDataList().get(0).getImages().getOriginal().getUrl();
 ```
 
-## Download ExclyCore
+## Download Giphy4J
 
-ExclyCore can either be downloaded as a JAR file or embedded as Maven dependency. 
+Giphy4J can either be downloaded as a JAR file or embedded as Maven dependency. 
 
 ### Manual Install
 
@@ -145,7 +145,7 @@ Download JAR from [here](https://github.com/keshrath/Giphy4J/tree/master/distrib
 	<dependency>
 		<groupId>at.mukprojects</groupId>
 		<artifactId>giphy4j</artifactId>
-		<version>1.0.0</version>
+		<version>1.0.1</version>
 	</dependency>
 ```
 

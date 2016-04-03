@@ -354,7 +354,7 @@ public class GiphyRandom {
     /**
      * Sets the fixed width downsampled width.
      * 
-     * @param fixedWidthDownsampledUrl
+     * @param fixedWidthDownsampledWidth
      *            the fixed width downsampled width
      */
     public void setFixedWidthDownsampledWidth(String fixedWidthDownsampledWidth) {

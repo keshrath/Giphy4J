@@ -4,7 +4,7 @@
 
 	<groupId>at.mukprojects</groupId>
 	<artifactId>giphy4j</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>Giphy4J</name>
@@ -78,15 +78,20 @@
 			<artifactId>junit</artifactId>
 			<version>4.8.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.10.19</version>
+		</dependency>
 	</dependencies>
-	
+
 	<distributionManagement>
 		<snapshotRepository>
 			<id>ossrh</id>
 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
 		</snapshotRepository>
 	</distributionManagement>
-	
+
 	<build>
 		<finalName>${project.build.finalName}</finalName>
 		<plugins>
@@ -165,5 +170,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 </project>
