@@ -55,7 +55,7 @@ public class GiphyData {
 
     @SerializedName("rating")
     private String rating;
-    
+
     @SerializedName("caption")
     private String caption;
 
@@ -80,7 +80,7 @@ public class GiphyData {
     /**
      * Returns the type.
      * 
-     * @return The type.
+     * @return the type
      */
     public String getType() {
 	return type;
@@ -90,7 +90,7 @@ public class GiphyData {
      * Sets the type.
      * 
      * @param type
-     *            The type.
+     *            the type
      */
     public void setType(String type) {
 	this.type = type;
@@ -99,7 +99,7 @@ public class GiphyData {
     /**
      * Returns the id.
      * 
-     * @return The id.
+     * @return the id
      */
     public String getId() {
 	return id;
@@ -109,7 +109,7 @@ public class GiphyData {
      * Sets the id.
      * 
      * @param id
-     *            The id.
+     *            the id
      */
     public void setId(String id) {
 	this.id = id;
@@ -118,7 +118,7 @@ public class GiphyData {
     /**
      * Returns the slug.
      * 
-     * @return The slug.
+     * @return the slug
      */
     public String getSlug() {
 	return slug;
@@ -128,7 +128,7 @@ public class GiphyData {
      * Sets the slug.
      * 
      * @param slug
-     *            The slug.
+     *            the slug
      */
     public void setSlug(String slug) {
 	this.slug = slug;
@@ -137,7 +137,7 @@ public class GiphyData {
     /**
      * Returns the URL.
      * 
-     * @return The URL.
+     * @return the URL
      */
     public String getUrl() {
 	return url;
@@ -147,7 +147,7 @@ public class GiphyData {
      * Sets the URL.
      * 
      * @param url
-     *            The URL.
+     *            the URL
      */
     public void setUrl(String url) {
 	this.url = url;
@@ -156,7 +156,7 @@ public class GiphyData {
     /**
      * Returns the bitly GIF URL.
      * 
-     * @return The bitly GIF URL.
+     * @return the bitly GIF URL
      */
     public String getBitlyGifUrl() {
 	return bitlyGifUrl;
@@ -166,7 +166,7 @@ public class GiphyData {
      * Sets the bitly GIF URL.
      * 
      * @param bitlyGifUrl
-     *            The bitly GIF URL.
+     *            the bitly GIF URL
      */
     public void setBitlyGifUrl(String bitlyGifUrl) {
 	this.bitlyGifUrl = bitlyGifUrl;
@@ -175,7 +175,7 @@ public class GiphyData {
     /**
      * Returns the bitly URL.
      * 
-     * @return The bitly URL.
+     * @return the bitly URL
      */
     public String getBitlyUrl() {
 	return bitlyUrl;
@@ -185,7 +185,7 @@ public class GiphyData {
      * Sets the bitly URL.
      * 
      * @param bitlyUrl
-     *            The bitly URL.
+     *            the bitly URL
      */
     public void setBitlyUrl(String bitlyUrl) {
 	this.bitlyUrl = bitlyUrl;
@@ -194,7 +194,7 @@ public class GiphyData {
     /**
      * Returns the embed URL.
      * 
-     * @return The embed URL.
+     * @return the embed URL
      */
     public String getEmbedUrl() {
 	return embedUrl;
@@ -204,7 +204,7 @@ public class GiphyData {
      * Sets the embed URL.
      * 
      * @param embedUrl
-     *            The embed URL.
+     *            the embed URL
      */
     public void setEmbedUrl(String embedUrl) {
 	this.embedUrl = embedUrl;
@@ -213,7 +213,7 @@ public class GiphyData {
     /**
      * Returns the username.
      * 
-     * @return The username.
+     * @return the username
      */
     public String getUsername() {
 	return username;
@@ -223,7 +223,7 @@ public class GiphyData {
      * Sets the username.
      * 
      * @param username
-     *            The username.
+     *            the username
      */
     public void setUsername(String username) {
 	this.username = username;
@@ -232,7 +232,7 @@ public class GiphyData {
     /**
      * Returns the source.
      * 
-     * @return The source.
+     * @return the source
      */
     public String getSource() {
 	return source;
@@ -242,7 +242,7 @@ public class GiphyData {
      * Sets the source.
      * 
      * @param source
-     *            The source.
+     *            the source
      */
     public void setSource(String source) {
 	this.source = source;
@@ -251,7 +251,7 @@ public class GiphyData {
     /**
      * Returns the rating.
      * 
-     * @return The rating.
+     * @return the rating
      */
     public String getRating() {
 	return rating;
@@ -261,7 +261,7 @@ public class GiphyData {
      * Sets the rating.
      * 
      * @param rating
-     *            The rating.
+     *            the rating
      */
     public void setRating(String rating) {
 	this.rating = rating;
@@ -270,7 +270,7 @@ public class GiphyData {
     /**
      * Returns the contentUrl.
      * 
-     * @return The contentUrl.
+     * @return the contentUrl
      */
     public String getContentUrl() {
 	return contentUrl;
@@ -280,7 +280,7 @@ public class GiphyData {
      * Sets the contentUrl.
      * 
      * @param contentUrl
-     *            The contentUrl.
+     *            the contentUrl
      */
     public void setContentUrl(String contentUrl) {
 	this.contentUrl = contentUrl;
@@ -289,7 +289,7 @@ public class GiphyData {
     /**
      * Returns the sourceTld.
      * 
-     * @return The sourceTld.
+     * @return the sourceTld
      */
     public String getSourceTld() {
 	return sourceTld;
@@ -299,7 +299,7 @@ public class GiphyData {
      * Sets the sourceTld.
      * 
      * @param sourceTld
-     *            The sourceTld.
+     *            the sourceTld
      */
     public void setSourceTld(String sourceTld) {
 	this.sourceTld = sourceTld;
@@ -308,7 +308,7 @@ public class GiphyData {
     /**
      * Returns the sourcePostUrl.
      * 
-     * @return The sourcePostUrl.
+     * @return the sourcePostUrl
      */
     public String getSourcePostUrl() {
 	return sourcePostUrl;
@@ -318,7 +318,7 @@ public class GiphyData {
      * Sets the sourcePostUrl.
      * 
      * @param sourcePostUrl
-     *            The sourcePostUrl.
+     *            the sourcePostUrl
      */
     public void setSourcePostUrl(String sourcePostUrl) {
 	this.sourcePostUrl = sourcePostUrl;
@@ -327,7 +327,7 @@ public class GiphyData {
     /**
      * Returns the importDatetime.
      * 
-     * @return The importDatetime.
+     * @return the importDatetime
      */
     public String getImportDatetime() {
 	return importDatetime;
@@ -337,7 +337,7 @@ public class GiphyData {
      * Sets the importDatetime.
      * 
      * @param importDatetime
-     *            The importDatetime.
+     *            the importDatetime
      */
     public void setImportDatetime(String importDatetime) {
 	this.importDatetime = importDatetime;
@@ -346,7 +346,7 @@ public class GiphyData {
     /**
      * Returns the trendingDatetime.
      * 
-     * @return The trendingDatetime.
+     * @return the trendingDatetime
      */
     public String getTrendingDatetime() {
 	return trendingDatetime;
@@ -356,7 +356,7 @@ public class GiphyData {
      * Sets the trendingDatetime.
      * 
      * @param trendingDatetime
-     *            The trendingDatetime.
+     *            the trendingDatetime
      */
     public void setTrendingDatetime(String trendingDatetime) {
 	this.trendingDatetime = trendingDatetime;
@@ -365,7 +365,7 @@ public class GiphyData {
     /**
      * Returns the image.
      * 
-     * @return The image.
+     * @return the image
      */
     public GiphyContainer getImages() {
 	return images;
@@ -375,7 +375,7 @@ public class GiphyData {
      * Sets the image.
      * 
      * @param images
-     *            The image.
+     *            the image
      */
     public void setImages(GiphyContainer images) {
 	this.images = images;

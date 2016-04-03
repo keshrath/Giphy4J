@@ -20,7 +20,6 @@ package at.mukprojects.giphy4j.entity.search;
 import com.google.gson.annotations.SerializedName;
 
 import at.mukprojects.giphy4j.entity.common.Meta;
-import at.mukprojects.giphy4j.entity.giphy.GiphyData;
 import at.mukprojects.giphy4j.entity.giphy.GiphyRandom;
 
 /**
@@ -39,8 +38,7 @@ public class SearchRandom {
      * Returns the data.
      * 
      * <p>
-     * "data": { ... },
-     * </p>
+     * "data": { ... }
      * 
      * @return The data.
      */
@@ -52,7 +50,7 @@ public class SearchRandom {
      * Sets the data.
      * 
      * @param data
-     *            The data.
+     *            the data
      */
     public void setData(GiphyRandom data) {
 	this.data = data;
@@ -63,9 +61,8 @@ public class SearchRandom {
      * 
      * <p>
      * "meta": { ... }
-     * </p>
      * 
-     * @return The meta data.
+     * @return the meta data.
      */
     public Meta getMeta() {
 	return meta;
@@ -75,7 +72,7 @@ public class SearchRandom {
      * Sets the meta data.
      * 
      * @param meta
-     *            The meta data.
+     *            the meta data
      */
     public void setMeta(Meta meta) {
 	this.meta = meta;

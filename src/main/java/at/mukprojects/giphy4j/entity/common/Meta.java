@@ -35,7 +35,7 @@ public class Meta {
     /**
      * Returns the status.
      * 
-     * @return The status as an integer value.
+     * @return the status as an integer value
      */
     public int getStatus() {
 	return status;
@@ -45,7 +45,7 @@ public class Meta {
      * Sets the status information of the meta object.
      * 
      * @param status
-     *            The status.
+     *            the status
      */
     public void setStatus(int status) {
 	this.status = status;
@@ -54,7 +54,7 @@ public class Meta {
     /**
      * Returns the meta message.
      * 
-     * @return The message.
+     * @return the message
      */
     public String getMsg() {
 	return msg;
@@ -64,7 +64,7 @@ public class Meta {
      * Sets the message of the meta object.
      * 
      * @param msg
-     *            The message.
+     *            the message
      */
     public void setMsg(String msg) {
 	this.msg = msg;

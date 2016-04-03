@@ -56,7 +56,7 @@ public class GiphyOriginal {
     /**
      * Returns the URL.
      * 
-     * @return The URL.
+     * @return the URL
      */
     public String getUrl() {
 	return url;
@@ -66,7 +66,7 @@ public class GiphyOriginal {
      * Sets the URL.
      * 
      * @param url
-     *            The URL.
+     *            the URL
      */
     public void setUrl(String url) {
 	this.url = url;
@@ -75,7 +75,7 @@ public class GiphyOriginal {
     /**
      * Returns the width.
      * 
-     * @return The width of the image.
+     * @return the width of the image
      */
     public String getWidth() {
 	return width;
@@ -85,7 +85,7 @@ public class GiphyOriginal {
      * Sets the width.
      * 
      * @param width
-     *            The width.
+     *            the width
      */
     public void setWidth(String width) {
 	this.width = width;
@@ -94,7 +94,7 @@ public class GiphyOriginal {
     /**
      * Returns the height.
      * 
-     * @return The height of the image.
+     * @return the height of the image
      */
     public String getHeight() {
 	return height;
@@ -104,7 +104,7 @@ public class GiphyOriginal {
      * Sets the height.
      * 
      * @param height
-     *            The height.
+     *            the height
      */
     public void setHeight(String height) {
 	this.height = height;
@@ -113,7 +113,7 @@ public class GiphyOriginal {
     /**
      * Returns the size.
      * 
-     * @return The size.
+     * @return the size
      */
     public String getSize() {
 	return size;
@@ -123,7 +123,7 @@ public class GiphyOriginal {
      * Sets the size.
      * 
      * @param size
-     *            The size.
+     *            the size
      */
     public void setSize(String size) {
 	this.size = size;
@@ -132,7 +132,7 @@ public class GiphyOriginal {
     /**
      * Returns the frame count.
      * 
-     * @return The frame count.
+     * @return the frame count
      */
     public String getFrames() {
 	return frames;
@@ -142,7 +142,7 @@ public class GiphyOriginal {
      * Sets the frame count.
      * 
      * @param frames
-     *            The frame count.
+     *            the frame count
      */
     public void setFrames(String frames) {
 	this.frames = frames;
@@ -151,7 +151,7 @@ public class GiphyOriginal {
     /**
      * Returns the mp4 URL.
      * 
-     * @return The mp4 URL.
+     * @return the mp4 URL
      */
     public String getMp4() {
 	return mp4;
@@ -161,7 +161,7 @@ public class GiphyOriginal {
      * Sets the mp4 URL.
      * 
      * @param mp4
-     *            The mp4 URL.
+     *            the mp4 URL
      */
     public void setMp4(String mp4) {
 	this.mp4 = mp4;
@@ -170,7 +170,7 @@ public class GiphyOriginal {
     /**
      * Returns the mp4 size.
      * 
-     * @return The mp4 size.
+     * @return the mp4 size
      */
     public String getMp4Size() {
 	return mp4Size;
@@ -180,7 +180,7 @@ public class GiphyOriginal {
      * Sets the mp4 size.
      * 
      * @param mp4Size
-     *            The mp4 size.
+     *            the mp4 size
      */
     public void setMp4Size(String mp4Size) {
 	this.mp4Size = mp4Size;
@@ -194,7 +194,7 @@ public class GiphyOriginal {
      * Sets the webp URL.
      * 
      * @param webp
-     *            The webp URL.
+     *            the webp URL
      */
     public void setWebp(String webp) {
 	this.webp = webp;
@@ -208,7 +208,7 @@ public class GiphyOriginal {
      * Sets the webp size.
      * 
      * @param webpSize
-     *            The webp size.
+     *            the webp size
      */
     public void setWebpSize(String webpSize) {
 	this.webpSize = webpSize;

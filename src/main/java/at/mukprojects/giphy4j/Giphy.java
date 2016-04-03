@@ -98,6 +98,10 @@ public class Giphy {
      * Search all Giphy GIFs for a word or phrase and returns a SearchFeed
      * object.
      * 
+     * <p>
+     * Be aware that not every response has all information available. In that
+     * case the value will be returned as null.
+     * 
      * @param query
      *            the query parameters. Multiple parameters are separated by a
      *            space
@@ -114,6 +118,10 @@ public class Giphy {
     /**
      * Search all Giphy GIFs for a word or phrase and returns a SearchFeed
      * object.
+     * 
+     * <p>
+     * Be aware that not every response has all information available. In that
+     * case the value will be returned as null.
      * 
      * @param query
      *            the query parameters. Multiple parameters are separated by a
@@ -156,6 +164,10 @@ public class Giphy {
     /**
      * Returns a SerachGiphy object.
      * 
+     * <p>
+     * Be aware that not every response has all information available. In that
+     * case the value will be returned as null.
+     * 
      * @param id
      *            the Giphy id
      * @return the SerachGiphy object
@@ -186,6 +198,10 @@ public class Giphy {
      * The translate API draws on search, but also translates from one
      * vocabulary to another. In this case, words and phrases to GIFs.
      * 
+     * <p>
+     * Be aware that not every response has all information available. In that
+     * case the value will be returned as null.
+     * 
      * @param query
      *            the query parameters
      * @return the SerachGiphy object
@@ -215,6 +231,10 @@ public class Giphy {
 
     /**
      * Returns a random GIF, limited by tag.
+     * 
+     * <p>
+     * Be aware that not every response has all information available. In that
+     * case the value will be returned as null.
      * 
      * @param tag
      *            the GIF tag to limit randomness
@@ -248,6 +268,10 @@ public class Giphy {
      * team. The data returned mirrors the GIFs showcased on the Giphy homepage.
      * Returns 25 results by default.
      * 
+     * <p>
+     * Be aware that not every response has all information available. In that
+     * case the value will be returned as null.
+     * 
      * @return the SearchFeed object
      * @throws GiphyException
      *             if an error occurs during the search
@@ -273,8 +297,12 @@ public class Giphy {
     }
 
     /**
-     * Search all Giphy Sticker GIFs for a word or phrase and returns a SearchFeed
-     * object.
+     * Search all Giphy Sticker GIFs for a word or phrase and returns a
+     * SearchFeed object.
+     * 
+     * <p>
+     * Be aware that not every response has all information available. In that
+     * case the value will be returned as null.
      * 
      * @param query
      *            the query parameters. Multiple parameters are separated by a
@@ -290,8 +318,12 @@ public class Giphy {
     }
 
     /**
-     * Search all Giphy Sticker GIFs for a word or phrase and returns a SearchFeed
-     * object.
+     * Search all Giphy Sticker GIFs for a word or phrase and returns a
+     * SearchFeed object.
+     * 
+     * <p>
+     * Be aware that not every response has all information available. In that
+     * case the value will be returned as null.
      * 
      * @param query
      *            the query parameters. Multiple parameters are separated by a
@@ -335,6 +367,10 @@ public class Giphy {
      * The translate API draws on search, but also translates from one
      * vocabulary to another. In this case, words and phrases to GIFs.
      * 
+     * <p>
+     * Be aware that not every response has all information available. In that
+     * case the value will be returned as null.
+     * 
      * @param query
      *            the query parameters
      * @return the SerachGiphy object
@@ -366,6 +402,10 @@ public class Giphy {
      * Fetch GIFs currently trending online. Hand curated by the Giphy editorial
      * team. The data returned mirrors the GIFs showcased on the Giphy homepage.
      * Returns 25 results by default.
+     * 
+     * <p>
+     * Be aware that not every response has all information available. In that
+     * case the value will be returned as null.
      * 
      * @return the SearchFeed object
      * @throws GiphyException

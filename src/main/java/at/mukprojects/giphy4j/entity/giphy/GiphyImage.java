@@ -53,7 +53,7 @@ public class GiphyImage {
     /**
      * Returns the URL.
      * 
-     * @return The URL.
+     * @return the URL
      */
     public String getUrl() {
 	return url;
@@ -63,7 +63,7 @@ public class GiphyImage {
      * Sets the URL.
      * 
      * @param url
-     *            The URL.
+     *            the URL
      */
     public void setUrl(String url) {
 	this.url = url;
@@ -72,7 +72,7 @@ public class GiphyImage {
     /**
      * Returns the width.
      * 
-     * @return The width of the image.
+     * @return the width of the image
      */
     public String getWidth() {
 	return width;
@@ -82,7 +82,7 @@ public class GiphyImage {
      * Sets the width.
      * 
      * @param width
-     *            The width.
+     *            the width
      */
     public void setWidth(String width) {
 	this.width = width;
@@ -91,7 +91,7 @@ public class GiphyImage {
     /**
      * Returns the height.
      * 
-     * @return The height of the image.
+     * @return the height of the image
      */
     public String getHeight() {
 	return height;
@@ -101,7 +101,7 @@ public class GiphyImage {
      * Sets the height.
      * 
      * @param height
-     *            The height.
+     *            the height
      */
     public void setHeight(String height) {
 	this.height = height;
@@ -110,7 +110,7 @@ public class GiphyImage {
     /**
      * Returns the size.
      * 
-     * @return The size.
+     * @return the size
      */
     public String getSize() {
 	return size;
@@ -120,7 +120,7 @@ public class GiphyImage {
      * Sets the size.
      * 
      * @param size
-     *            The size.
+     *            the size
      */
     public void setSize(String size) {
 	this.size = size;
@@ -129,7 +129,7 @@ public class GiphyImage {
     /**
      * Returns the mp4 URL.
      * 
-     * @return The mp4 URL.
+     * @return the mp4 URL
      */
     public String getMp4() {
 	return mp4;
@@ -139,7 +139,7 @@ public class GiphyImage {
      * Sets the mp4 URL.
      * 
      * @param mp4
-     *            The mp4 URL.
+     *            the mp4 URL
      */
     public void setMp4(String mp4) {
 	this.mp4 = mp4;
@@ -148,7 +148,7 @@ public class GiphyImage {
     /**
      * Returns the mp4 size.
      * 
-     * @return The mp4 size.
+     * @return the mp4 size
      */
     public String getMp4Size() {
 	return mp4Size;
@@ -158,7 +158,7 @@ public class GiphyImage {
      * Sets the mp4 size.
      * 
      * @param mp4Size
-     *            The mp4 size.
+     *            the mp4 size
      */
     public void setMp4Size(String mp4Size) {
 	this.mp4Size = mp4Size;
@@ -172,7 +172,7 @@ public class GiphyImage {
      * Sets the webp URL.
      * 
      * @param webp
-     *            The webp URL.
+     *            the webp URL
      */
     public void setWebp(String webp) {
 	this.webp = webp;
@@ -186,7 +186,7 @@ public class GiphyImage {
      * Sets the webp size.
      * 
      * @param webpSize
-     *            The webp size.
+     *            the webp size
      */
     public void setWebpSize(String webpSize) {
 	this.webpSize = webpSize;

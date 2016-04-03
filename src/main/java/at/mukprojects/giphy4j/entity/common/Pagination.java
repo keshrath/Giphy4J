@@ -38,7 +38,7 @@ public class Pagination {
     /**
      * Returns the total count of the response.
      * 
-     * @return The total count.
+     * @return the total count
      */
     public int getTotalCount() {
 	return totalCount;
@@ -48,7 +48,7 @@ public class Pagination {
      * Sets the total count of the pagination object.
      * 
      * @param totalCount
-     *            The total count.
+     *            the total count
      */
     public void setTotalCount(int totalCount) {
 	this.totalCount = totalCount;
@@ -57,7 +57,7 @@ public class Pagination {
     /**
      * Returns the count of the response.
      * 
-     * @return The count.
+     * @return the count
      */
     public int getCount() {
 	return count;
@@ -67,7 +67,7 @@ public class Pagination {
      * Sets the count of the pagination object.
      * 
      * @param count
-     *            The count.
+     *            the count
      */
     public void setCount(int count) {
 	this.count = count;
@@ -76,7 +76,7 @@ public class Pagination {
     /**
      * Returns the offset of the response.
      * 
-     * @return The offset.
+     * @return the offset
      */
     public int getOffset() {
 	return offset;
@@ -86,7 +86,7 @@ public class Pagination {
      * Sets the offset of the pagination object.
      * 
      * @param offset
-     *            The offset.
+     *            the offset
      */
     public void setOffset(int offset) {
 	this.offset = offset;

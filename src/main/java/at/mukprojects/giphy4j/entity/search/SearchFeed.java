@@ -46,9 +46,8 @@ public class SearchFeed {
      * 
      * <p>
      * "data": [ ... ],
-     * </p>
      * 
-     * @return The data list.
+     * @return the data list
      */
     public List<GiphyData> getDataList() {
 	return dataList;
@@ -58,7 +57,7 @@ public class SearchFeed {
      * Sets the data list.
      * 
      * @param dataList
-     *            The data list.
+     *            the data list
      */
     public void setDataList(List<GiphyData> dataList) {
 	this.dataList = dataList;
@@ -69,9 +68,8 @@ public class SearchFeed {
      * 
      * <p>
      * "meta": { ... },
-     * </p>
      * 
-     * @return The meta information object.
+     * @return the meta information object
      */
     public Meta getMeta() {
 	return meta;
@@ -81,7 +79,7 @@ public class SearchFeed {
      * Sets the meta object.
      * 
      * @param meta
-     *            The meta object.
+     *            the meta object
      */
     public void setMeta(Meta meta) {
 	this.meta = meta;
@@ -92,9 +90,8 @@ public class SearchFeed {
      * 
      * <p>
      * "pagination": { ... }
-     * </p>
      * 
-     * @return The pagination object.
+     * @return the pagination object
      */
     public Pagination getPagination() {
 	return pagination;
@@ -104,7 +101,7 @@ public class SearchFeed {
      * Sets the pagination object.
      * 
      * @param pagination
-     *            The pagination object.
+     *            the pagination object
      */
     public void setPagination(Pagination pagination) {
 	this.pagination = pagination;

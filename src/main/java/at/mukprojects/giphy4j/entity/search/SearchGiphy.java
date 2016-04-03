@@ -39,9 +39,8 @@ public class SearchGiphy {
      * 
      * <p>
      * "data": { ... },
-     * </p>
      * 
-     * @return The data.
+     * @return the data
      */
     public GiphyData getData() {
 	return data;
@@ -51,7 +50,7 @@ public class SearchGiphy {
      * Sets the data.
      * 
      * @param data
-     *            The data.
+     *            the data
      */
     public void setData(GiphyData data) {
 	this.data = data;
@@ -62,9 +61,8 @@ public class SearchGiphy {
      * 
      * <p>
      * "meta": { ... }
-     * </p>
      * 
-     * @return The meta data.
+     * @return the meta data
      */
     public Meta getMeta() {
 	return meta;
@@ -74,7 +72,7 @@ public class SearchGiphy {
      * Sets the meta data.
      * 
      * @param meta
-     *            The meta data.
+     *            the meta data
      */
     public void setMeta(Meta meta) {
 	this.meta = meta;
@@ -82,7 +80,7 @@ public class SearchGiphy {
 
     @Override
     public String toString() {
-	String outputString = "SearchFeed [";
+	String outputString = "SearchGiphy [";
 	outputString += "\n  " + data;
 	outputString += "\n  " + meta + "\n]";
 	return outputString;
