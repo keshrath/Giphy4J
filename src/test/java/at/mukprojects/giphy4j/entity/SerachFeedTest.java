@@ -17,34 +17,34 @@
 
 package at.mukprojects.giphy4j.entity;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.StringWriter;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import at.mukprojects.giphy4j.Giphy;
+import at.mukprojects.giphy4j.dao.HttpRequestSender;
+import at.mukprojects.giphy4j.dao.RequestSender;
 import at.mukprojects.giphy4j.entity.search.SearchFeed;
 import at.mukprojects.giphy4j.exception.GiphyException;
+import at.mukprojects.giphy4j.http.Request;
 
-/**
- * SerachFeed test class.
- *
- * @author Mathias Markl
- */
 public class SerachFeedTest {
 
     private final static String API_KEY = "dc6zaTOxFJmzC";
-    private final static String RESFILE = "src/test/resources/search-response.json";
+    private final static String RESFILE = "src/test/resources/search-feed-response.json";
 
     private StringWriter writer;
     private FileInputStream inputStream;
@@ -53,6 +53,8 @@ public class SerachFeedTest {
     private String jsonResponse;
 
     private Giphy giphy;
+    private Giphy giphyMockExceptionCode;
+    private Giphy giphyMockExceptionParse;
 
     @Before
     public void setUp() throws Exception {
@@ -66,6 +68,16 @@ public class SerachFeedTest {
 
 	gson = new GsonBuilder().create();
 	giphy = new Giphy(API_KEY);
+
+	RequestSender senderCode = Mockito.mock(HttpRequestSender.class);
+	when(senderCode.sendRequest(any(Request.class))).thenThrow(new IOException("Bad response! Code: 401"));
+	giphyMockExceptionCode = new Giphy(API_KEY, senderCode);
+
+	RequestSender senderParse = Mockito.mock(HttpRequestSender.class);
+	when(senderParse.sendRequest(any(Request.class)))
+		.thenThrow(new IOException("Unparseable response body! \n { '' }"));
+	giphyMockExceptionParse = new Giphy(API_KEY, senderCode);
+
     }
 
     @After
@@ -88,23 +100,37 @@ public class SerachFeedTest {
     }
 
     @Test
-    public void testSearchFeedRequest() throws GiphyException {
+    public void testSearchFeedRequestSearchSuccess() throws GiphyException {
 	assertTrue(giphy.search("cat", 1, 0) != null);
+	assertFalse(giphy.search("cat", 1, 0).getDataList().isEmpty());
     }
-    
+
     @Test
-    public void testSearchFeedRequest2() throws GiphyException {
+    public void testSearchFeedRequestTrendSuccess() throws GiphyException {
 	assertTrue(giphy.trend() != null);
+	assertFalse(giphy.trend().getDataList().isEmpty());
     }
-    
+
     @Test
-    public void testSearchFeedRequest3() throws GiphyException {
+    public void testSearchFeedRequestSearchStickerSuccess() throws GiphyException {
 	assertTrue(giphy.searchSticker("cat", 1, 0) != null);
+	assertFalse(giphy.searchSticker("cat", 1, 0).getDataList().isEmpty());
+    }
+
+    @Test
+    public void testSearchFeedRequestTrendStickerSuccess() throws GiphyException {
+	assertTrue(giphy.trendSticker() != null);
+	assertFalse(giphy.trendSticker().getDataList().isEmpty());
+    }
+
+    @Test(expected = GiphyException.class)
+    public void testSearchFeedRequestFailExceptionCode() throws GiphyException {
+	giphyMockExceptionCode.search("", 1);
     }
     
-    @Test
-    public void testSearchFeedRequest4() throws GiphyException {
-	assertTrue(giphy.trendSticker() != null);
+    @Test(expected = GiphyException.class)
+    public void testSearchFeedRequestFailExceptionParse() throws GiphyException {
+	giphyMockExceptionParse.search("", 1);
     }
 
 }

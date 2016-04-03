@@ -47,7 +47,7 @@ public class HttpRequestSender implements RequestSender {
     }
 
     private HttpURLConnection createConnection(Request request) throws IOException {
-	URL url = new URL(request.getBuildURL());
+	URL url = new URL(request.getUrl());
 	HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
 	connection.setConnectTimeout(Giphy4JConstants.TIMEOUT);
