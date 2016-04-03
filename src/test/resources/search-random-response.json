@@ -1,0 +1,36 @@
+{
+	"data": 
+	{
+		"type": "gif",
+		"id": "pZMX1O9D5LHJS",
+		"url": "http:\/\/giphy.com\/gifs\/pZMX1O9D5LHJS",
+		"image_original_url": "http:\/\/media3.giphy.com\/media\/pZMX1O9D5LHJS\/giphy.gif",
+		"image_url": "http:\/\/media3.giphy.com\/media\/pZMX1O9D5LHJS\/giphy.gif",
+		"image_mp4_url": "http:\/\/media3.giphy.com\/media\/pZMX1O9D5LHJS\/giphy.mp4",
+		"image_frames": "20",
+		"image_width": "534",
+		"image_height": "300",
+		"fixed_height_downsampled_url": "http:\/\/media3.giphy.com\/media\/pZMX1O9D5LHJS\/200_d.gif",
+		"fixed_height_downsampled_width": "356",
+		"fixed_height_downsampled_height": "200",
+		"fixed_width_downsampled_url": "http:\/\/media3.giphy.com\/media\/pZMX1O9D5LHJS\/200w_d.gif",
+		"fixed_width_downsampled_width": "200",
+		"fixed_width_downsampled_height": "112",
+		"fixed_height_small_url": "http:\/\/media3.giphy.com\/media\/pZMX1O9D5LHJS\/100.gif",
+		"fixed_height_small_still_url": "http:\/\/media3.giphy.com\/media\/pZMX1O9D5LHJS\/100_s.gif",
+		"fixed_height_small_width": "178",
+		"fixed_height_small_height": "100",
+		"fixed_width_small_url": "http:\/\/media3.giphy.com\/media\/pZMX1O9D5LHJS\/100w.gif",
+		"fixed_width_small_still_url": "http:\/\/media3.giphy.com\/media\/pZMX1O9D5LHJS\/100w_s.gif",
+		"fixed_width_small_width": "100",
+		"fixed_width_small_height": "56",
+		"username": "",
+		"caption": ""
+	},
+
+	"meta": 
+	{
+		"status": 200,
+		"msg": "OK"
+	}
+}

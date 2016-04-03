@@ -33,7 +33,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import at.mukprojects.giphy4j.Giphy;
-import at.mukprojects.giphy4j.entity.search.SerachGiphy;
+import at.mukprojects.giphy4j.entity.search.SearchGiphy;
 import at.mukprojects.giphy4j.exception.GiphyException;
 
 /**
@@ -76,7 +76,7 @@ public class SerachGiphyTest {
 
     @Test
     public void testSearchFeedModel() {
-	SerachGiphy serachGiphy = gson.fromJson(jsonResponse, SerachGiphy.class);
+	SearchGiphy serachGiphy = gson.fromJson(jsonResponse, SearchGiphy.class);
 
 	assertTrue(serachGiphy.getMeta().getStatus() == 200);
 	assertEquals(serachGiphy.getData().getId(), "feqkVgjJpYtjy");

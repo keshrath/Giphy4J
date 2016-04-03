@@ -21,16 +21,15 @@ import com.google.gson.annotations.SerializedName;
 
 import at.mukprojects.giphy4j.entity.common.Meta;
 import at.mukprojects.giphy4j.entity.giphy.GiphyData;
-import at.mukprojects.giphy4j.entity.giphy.GiphyRandom;
 
 /**
  * This class represents a single search response.
  *
  * @author Mathias Markl
  */
-public class SerachRandom {
+public class SearchGiphy {
     @SerializedName("data")
-    private GiphyRandom data;
+    private GiphyData data;
 
     @SerializedName("meta")
     private Meta meta;
@@ -44,7 +43,7 @@ public class SerachRandom {
      * 
      * @return The data.
      */
-    public GiphyRandom getData() {
+    public GiphyData getData() {
 	return data;
     }
 
@@ -54,7 +53,7 @@ public class SerachRandom {
      * @param data
      *            The data.
      */
-    public void setData(GiphyRandom data) {
+    public void setData(GiphyData data) {
 	this.data = data;
     }
 
@@ -83,7 +82,7 @@ public class SerachRandom {
 
     @Override
     public String toString() {
-	String outputString = "SearchRandom [";
+	String outputString = "SearchFeed [";
 	outputString += "\n  " + data;
 	outputString += "\n  " + meta + "\n]";
 	return outputString;
