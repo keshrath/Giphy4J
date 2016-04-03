@@ -107,6 +107,12 @@ public class SerachGiphyTest {
 	assertTrue(giphy.translate("cat") != null);
 	assertTrue(giphy.translate("cat").getData() != null);
     }
+    
+    @Test
+    public void testSearchFeedRequestTranslateStickerSuccess() throws GiphyException {
+	assertTrue(giphy.translateSticker("cat") != null);
+	assertTrue(giphy.translateSticker("cat").getData() != null);
+    }
 
     @Test(expected = GiphyException.class)
     public void testSearchFeedRequestFailExceptionCode() throws GiphyException {
@@ -115,7 +121,7 @@ public class SerachGiphyTest {
     
     @Test(expected = GiphyException.class)
     public void testSearchFeedRequestFailExceptionParse() throws GiphyException {
-	giphyMockExceptionParse.searchByID("");
+	giphyMockExceptionParse.translate("");
     }
 
 }

@@ -104,6 +104,14 @@ public class SerachFeedTest {
 	assertTrue(giphy.search("cat", 1, 0) != null);
 	assertFalse(giphy.search("cat", 1, 0).getDataList().isEmpty());
     }
+    
+    @Test
+    public void testSearchFeedRequestSearchLimit() throws GiphyException {
+	assertTrue(giphy.search("cat", 101, 0) != null);
+	assertFalse(giphy.search("cat", 1, 0).getDataList().isEmpty());
+	assertTrue(giphy.search("cat", 1, 0).getDataList().size() <= 100);
+    }
+
 
     @Test
     public void testSearchFeedRequestTrendSuccess() throws GiphyException {
@@ -115,6 +123,13 @@ public class SerachFeedTest {
     public void testSearchFeedRequestSearchStickerSuccess() throws GiphyException {
 	assertTrue(giphy.searchSticker("cat", 1, 0) != null);
 	assertFalse(giphy.searchSticker("cat", 1, 0).getDataList().isEmpty());
+    }
+    
+    @Test
+    public void testSearchFeedRequestSearchStickerLimit() throws GiphyException {
+	assertTrue(giphy.searchSticker("cat", 101, 0) != null);
+	assertFalse(giphy.searchSticker("cat", 1, 0).getDataList().isEmpty());
+	assertTrue(giphy.searchSticker("cat", 1, 0).getDataList().size() <= 100);
     }
 
     @Test
@@ -130,7 +145,7 @@ public class SerachFeedTest {
     
     @Test(expected = GiphyException.class)
     public void testSearchFeedRequestFailExceptionParse() throws GiphyException {
-	giphyMockExceptionParse.search("", 1);
+	giphyMockExceptionParse.trend();
     }
 
 }
