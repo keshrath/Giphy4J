@@ -12,14 +12,8 @@ cache:
 jdk:
   - oraclejdk8
 
-os:
-  - linux
-
-install: true
-
-script:
-  - mvn test -B
-  - mvn cobertura:cobertura
+before_install
+  - pip install --user codecov
 
 after_script:
-  - bash <(curl -s https://codecov.io/bash)
+  - codecov
