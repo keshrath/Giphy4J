@@ -1,5 +1,6 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-
+[![Build Status](https://travis-ci.org/keshrath/Giphy4J.svg?branch=master)](https://travis-ci.org/keshrath/Giphy4J)
+[![codecov](https://codecov.io/gh/keshrath/Giphy4J/branch/master/graph/badge.svg)](https://codecov.io/gh/keshrath/Giphy4J)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/532c896527fd435d93442f441c125c65)](https://www.codacy.com/app/keshrath/Giphy4J?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=keshrath/Giphy4J&amp;utm_campaign=Badge_Grade)
 
 # Giphy4J
