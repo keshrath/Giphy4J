@@ -16,7 +16,8 @@ os:
   - linux
 
 install: true
-script: mvn test -B cobertura:cobertura
+
+script: "mvn cobertura:cobertura"
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
